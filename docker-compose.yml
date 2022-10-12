@@ -26,7 +26,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "80:80"
+      - "80:localhost:80"
     volumes:
       - ./:/var/www/html
       - ./nginx/conf.d/:/etc/nginx/conf.d/
@@ -40,7 +40,7 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "3306:3306"
+      - "3306:localhost:3306"
     environment:
       MYSQL_DATABASE: laraveldb
       MYSQL_USER: laravel
